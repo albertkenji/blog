@@ -85,9 +85,10 @@ distill::create_blog(dir = "directory", title = "Blog Name")
 
 - [Before I Sleep](https://milesmcbain.xyz/)
 - [The Mockup](https://themockup.blog)
- 
+- [Taras Kaduk](https://taraskaduk.com/)  
+- [Open Source Football](https://www.opensourcefootball.com/)  
 
-## References
+## Links
 
 - [Rstudio distill blog](https://rstudio.github.io/distill/)
 
