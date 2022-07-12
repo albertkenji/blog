@@ -70,7 +70,7 @@ distill::create_blog(dir = "directory", title = "Blog Name")
 **6. Netlify**  
 
 - Import from github: deploy website
-- Change domain (https://albertkenji.netlify.app/)
+- Change domain (https://gyoza-restaurant.netlify.app/)
 
 
 **7. Basic blog workflow**
