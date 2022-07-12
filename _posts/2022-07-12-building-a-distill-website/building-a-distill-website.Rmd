@@ -69,8 +69,9 @@ distill::create_blog(dir = "directory", title = "Blog Name")
 
 **6. Netlify**  
 
-- Import from github
-- Change domain
+- Import from github: deploy website
+- Change domain (https://albertkenji.netlify.app/)
+
 
 **7. Basic blog workflow**
 
@@ -89,3 +90,7 @@ distill::create_blog(dir = "directory", title = "Blog Name")
 ## References
 
 - [Rstudio distill blog](https://rstudio.github.io/distill/)
+
+- [Lisa Lendway - Youtube tutorial](https://www.youtube.com/watch?v=Fm3bsYCilEU)  
+
+- [Building a blog with distill - Thomas Mock](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/)
