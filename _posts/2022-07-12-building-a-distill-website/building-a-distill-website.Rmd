@@ -17,11 +17,11 @@ output:
 
 ## Tools
 
-- Opearational system: Ubuntu 20.04
+- OS: Ubuntu 22.04
 - R (Version 4.2.1)
-- Rstudio (IDE)
-- Github
-- Netlify
+- [Rstudio](https://www.rstudio.com/)
+- [Github](https://github.com/)
+- [Netlify](https://www.netlify.com/)
 
 ## Instructions
 
