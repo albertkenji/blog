@@ -1,0 +1,12 @@
+---
+title: "Gallery of featured posts"
+listing:
+    posts:
+        - 2022-07-12-building-a-distill-website
+
+---
+
+
+
+
+

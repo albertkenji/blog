@@ -1,0 +1,91 @@
+---
+title: "Building a {distill} website"
+description: "How I built this site using {distill}"
+author:
+  - name: Kenji
+date: 2022-07-12
+categories:
+    - tutorial
+    - R
+    - distill
+preview: distill-logo.jpeg
+output:
+  distill::distill_article:
+    self_contained: false
+
+---
+
+## Tools
+
+- Opearational system: Ubuntu 20.04
+- R (Version 4.2.1)
+- Rstudio (IDE)
+- Github
+- Netlify
+
+## Instructions
+
+**1. Install distill package**
+
+```{r eval=FALSE}
+
+install.packages("distill")
+
+```
+
+**2. Create new project**
+
+```{r eval=FALSE}
+
+distill::create_blog(dir = "directory", title = "Blog Name")
+
+```
+
+
+**3. Structure**  
+
+`site.yml`: website configuration file  
+
+- [X] Add RSS: index.xml  
+- [X] Add social media icons  
+- [X] Modify fonts/colors/bar: new css theme  
+- [X] Add Categories  
+
+`index.Rmd`: blog home page (Rmarkdown)  
+
+`about.Rmd`: about page (Rmarkdown)  
+
+`_posts`: folder with Rmarkdown posts
+
+**4. distill functions**
+
+- `create_post("name post")`
+- `create_theme("name theme")`: Modify css blog theme
+
+**5. Git/Github**
+
+- [] Connect Github to existing project via Rstudio  
+- [] 
+
+**6. Netlify**  
+
+- Import from github
+- Change domain
+
+**7. Basic blog workflow**
+
+- Create new blog post in RStudio: `distill::create_post()`  
+- Knit new blog post: `ctrl + shift + k`
+- Commit and push: integration between RStudio and Github  
+
+**8. Styles (CSS)** 
+
+## Example distill blogs
+
+- [Before I Sleep](https://milesmcbain.xyz/)
+- [The Mockup](https://themockup.blog)
+ 
+
+## References
+
+- [Rstudio distill blog](https://rstudio.github.io/distill/)

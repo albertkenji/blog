@@ -1,0 +1,29 @@
+name: "blog"
+title: "餃子店"
+description: |
+  Food, Statistics, Economy, Sports
+output_dir: "_site"
+collections:
+    posts:
+     categories: true
+     categories_metadata: true
+     authors_metadata: false
+     share: [twitter, linkedin]
+     citations: false
+base_url: https://beta.rstudioconnect.com/content/1124
+navbar:
+  logo:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Contributors"
+      href: contributors.html
+    - icon: fa fa-github
+      href: https://github.com/albertkenji
+    - icon: fa fa-rss
+      href: index.xml
+output: 
+    distill::distill_article:
+        css: styles.css
