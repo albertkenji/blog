@@ -12,7 +12,8 @@ preview: distill-logo.jpeg
 output:
   distill::distill_article:
     self_contained: false
-
+    toc: true
+    toc_depth: 2
 ---
 
 ## Tools
@@ -22,10 +23,11 @@ output:
 - [Rstudio](https://www.rstudio.com/)
 - [Github](https://github.com/)
 - [Netlify](https://www.netlify.com/)
+- Packages: Distill; Usethis
 
 ## Instructions
 
-**1. Install distill package**
+### 1 - Install distill package
 
 ```{r eval=FALSE}
 
@@ -33,7 +35,7 @@ install.packages("distill")
 
 ```
 
-**2. Create new project**
+### 2 - Create new project
 
 ```{r eval=FALSE}
 
@@ -42,44 +44,64 @@ distill::create_blog(dir = "directory", title = "Blog Name")
 ```
 
 
-**3. Structure**  
+### 3 - Structure  
 
-`site.yml`: website configuration file  
+`site.yml`: website configuration file.  
 
-- [X] Add RSS: index.xml  
-- [X] Add social media icons  
-- [X] Modify fonts/colors/bar: new css theme  
-- [X] Add Categories  
+`index.Rmd`: blog home page (Rmarkdown).    
 
-`index.Rmd`: blog home page (Rmarkdown)  
+`about.Rmd`: about page (Rmarkdown).   
 
-`about.Rmd`: about page (Rmarkdown)  
+`_posts`: folder with raw Rmarkdown posts.  
 
-`_posts`: folder with Rmarkdown posts
+`_site`: folder where the built site lives as final HTML and other supporting files.  
 
-**4. distill functions**
+
+### 4 - distill functions
 
 - `create_post("name post")`
-- `create_theme("name theme")`: Modify css blog theme
 
-**5. Git/Github**
+```{r eval=FALSE}
 
-- [] Connect Github to existing project via Rstudio  
-- [] 
+distill::create_post(
+    title,
+    author = "auto",
+    slug = "auto", # generates a website slug (URL)
+    date_prefix = TRUE, # add like 2022-07-12-blog-post
+    draft = FALSE, #this prevents the post from being included in the site build until you turn it to FALSE
+    edit = interactive()
+)
 
-**6. Netlify**  
-
-- Import from github: deploy website
-- Change domain (https://gyoza-restaurant.netlify.app/)
+```
 
 
-**7. Basic blog workflow**
+- `create_theme("name theme")`: Modify css blog theme.  
+
+### 5 - Git/Github
+
+- Add git locally, run `usethis::use_git()` command.  
+- Connect Github to existing project via Rstudio, run `usethis::use_github()` command.  
+- Commit and push.  
+
+### 6 - Netlify
+
+- Import from github: deploy website.  
+- Change domain (Example : https://gyoza-restaurant.netlify.app/).  
+- Set the Publish directory to `_site` 
+
+### 7 - Basic blog workflow
 
 - Create new blog post in RStudio: `distill::create_post()`  
 - Knit new blog post: `ctrl + shift + k`
 - Commit and push: integration between RStudio and Github  
 
-**8. Styles (CSS)** 
+### 8 - Styles (CSS)
+
+- [X] Add RSS: index.xml  
+- [X] Add social media icons  
+- [X] Modify fonts/colors/bar: New css theme  
+- [X] Add Categories  
+
 
 ## Example distill blogs
 

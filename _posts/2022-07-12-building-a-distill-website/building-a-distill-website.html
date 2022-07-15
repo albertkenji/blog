@@ -113,7 +113,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output"]}},"value":[{"type":"character","attributes":{},"value":["Building a {distill} website"]},{"type":"character","attributes":{},"value":["How I built this site using {distill}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Kenji"]}]}]},{"type":"character","attributes":{},"value":["2022-07-12"]},{"type":"character","attributes":{},"value":["tutorial","R","distill"]},{"type":"character","attributes":{},"value":["distill-logo.jpeg"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output"]}},"value":[{"type":"character","attributes":{},"value":["Building a {distill} website"]},{"type":"character","attributes":{},"value":["How I built this site using {distill}"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Kenji"]}]}]},{"type":"character","attributes":{},"value":["2022-07-12"]},{"type":"character","attributes":{},"value":["tutorial","R","distill"]},{"type":"character","attributes":{},"value":["distill-logo.jpeg"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1517,6 +1517,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#example-distill-blogs">Example distill blogs</a></li>
+<li><a href="#links">Links</a></li>
+</ul>
+</nav>
+</div>
 <h2 id="tools">Tools</h2>
 <ul>
 <li>OS: Ubuntu 22.04</li>
@@ -1524,22 +1535,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="https://www.rstudio.com/">Rstudio</a></li>
 <li><a href="https://github.com/">Github</a></li>
 <li><a href="https://www.netlify.com/">Netlify</a></li>
+<li>Packages: Distill; Usethis</li>
 </ul>
 <h2 id="instructions">Instructions</h2>
-<p><strong>1. Install distill package</strong></p>
+<h3 id="install-distill-package">1 - Install distill package</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"distill"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p><strong>2. Create new project</strong></p>
+<h3 id="create-new-project">2 - Create new project</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>distill</span><span class='fu'>::</span><span class='fu'><a href='https://pkgs.rstudio.com/distill/reference/create_website.html'>create_blog</a></span><span class='op'>(</span>dir <span class='op'>=</span> <span class='st'>"directory"</span>, title <span class='op'>=</span> <span class='st'>"Blog Name"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>distill</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/distill/man/create_website.html'>create_blog</a></span><span class='op'>(</span>dir <span class='op'>=</span> <span class='st'>"directory"</span>, title <span class='op'>=</span> <span class='st'>"Blog Name"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p><strong>3. Structure</strong></p>
-<p><code>site.yml</code>: website configuration file</p>
+<h3 id="structure">3 - Structure</h3>
+<p><code>site.yml</code>: website configuration file.</p>
+<p><code>index.Rmd</code>: blog home page (Rmarkdown).</p>
+<p><code>about.Rmd</code>: about page (Rmarkdown).</p>
+<p><code>_posts</code>: folder with raw Rmarkdown posts.</p>
+<p><code>_site</code>: folder where the built site lives as final HTML
+and other supporting files.</p>
+<h3 id="distill-functions">4 - distill functions</h3>
+<ul>
+<li><code>create_post("name post")</code></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>distill</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/distill/man/create_post.html'>create_post</a></span><span class='op'>(</span></span>
+<span>    <span class='va'>title</span>,</span>
+<span>    author <span class='op'>=</span> <span class='st'>"auto"</span>,</span>
+<span>    slug <span class='op'>=</span> <span class='st'>"auto"</span>, <span class='co'># generates a website slug (URL)</span></span>
+<span>    date_prefix <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='co'># add like 2022-07-12-blog-post</span></span>
+<span>    draft <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='co'>#this prevents the post from being included in the site build until you turn it to FALSE</span></span>
+<span>    edit <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<ul>
+<li><code>create_theme("name theme")</code>: Modify css blog theme.</li>
+</ul>
+<h3 id="gitgithub">5 - Git/Github</h3>
+<ul>
+<li>Add git locally, run <code>usethis::use_git()</code> command.<br />
+</li>
+<li>Connect Github to existing project via Rstudio, run
+<code>usethis::use_github()</code> command.<br />
+</li>
+<li>Commit and push.</li>
+</ul>
+<h3 id="netlify">6 - Netlify</h3>
+<ul>
+<li>Import from github: deploy website.<br />
+</li>
+<li>Change domain (Example : <a
+href="https://gyoza-restaurant.netlify.app/"
+class="uri">https://gyoza-restaurant.netlify.app/</a>).<br />
+</li>
+<li>Set the Publish directory to <code>_site</code></li>
+</ul>
+<h3 id="basic-blog-workflow">7 - Basic blog workflow</h3>
+<ul>
+<li>Create new blog post in RStudio:
+<code>distill::create_post()</code><br />
+</li>
+<li>Knit new blog post: <code>ctrl + shift + k</code></li>
+<li>Commit and push: integration between RStudio and Github</li>
+</ul>
+<h3 id="styles-css">8 - Styles (CSS)</h3>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
 Add RSS: index.xml<br />
@@ -1548,40 +1612,11 @@ Add RSS: index.xml<br />
 Add social media icons<br />
 </li>
 <li><input type="checkbox" disabled="" checked="" />
-Modify fonts/colors/bar: new css theme<br />
+Modify fonts/colors/bar: New css theme<br />
 </li>
 <li><input type="checkbox" disabled="" checked="" />
 Add Categories</li>
 </ul>
-<p><code>index.Rmd</code>: blog home page (Rmarkdown)</p>
-<p><code>about.Rmd</code>: about page (Rmarkdown)</p>
-<p><code>_posts</code>: folder with Rmarkdown posts</p>
-<p><strong>4. distill functions</strong></p>
-<ul>
-<li><code>create_post("name post")</code></li>
-<li><code>create_theme("name theme")</code>: Modify css blog theme</li>
-</ul>
-<p><strong>5. Git/Github</strong></p>
-<ul>
-<li>[] Connect Github to existing project via Rstudio<br />
-</li>
-<li>[]</li>
-</ul>
-<p><strong>6. Netlify</strong></p>
-<ul>
-<li>Import from github: deploy website</li>
-<li>Change domain (<a href="https://gyoza-restaurant.netlify.app/"
-class="uri">https://gyoza-restaurant.netlify.app/</a>)</li>
-</ul>
-<p><strong>7. Basic blog workflow</strong></p>
-<ul>
-<li>Create new blog post in RStudio:
-<code>distill::create_post()</code><br />
-</li>
-<li>Knit new blog post: <code>ctrl + shift + k</code></li>
-<li>Commit and push: integration between RStudio and Github</li>
-</ul>
-<p><strong>8. Styles (CSS)</strong></p>
 <h2 id="example-distill-blogs">Example distill blogs</h2>
 <ul>
 <li><a href="https://milesmcbain.xyz/">Before I Sleep</a></li>

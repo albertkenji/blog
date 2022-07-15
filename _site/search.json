@@ -6,7 +6,7 @@
       "description": "Data Analytics",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-12T16:44:28-03:00"
+      "last_modified": "2022-07-13T09:26:01-03:00"
     },
     {
       "path": "contributors.html",
@@ -14,21 +14,21 @@
       "description": "A new article created using the Distill format.",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-12T16:44:28-03:00"
+      "last_modified": "2022-07-13T09:26:01-03:00"
     },
     {
       "path": "gallery.html",
       "title": "Gallery of featured posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-12T16:44:29-03:00"
+      "last_modified": "2022-07-13T09:26:02-03:00"
     },
     {
       "path": "index.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-12T16:44:30-03:00"
+      "last_modified": "2022-07-13T09:26:02-03:00"
     }
   ],
   "collections": ["posts/posts.json"]
